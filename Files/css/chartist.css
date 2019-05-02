@@ -5,15 +5,25 @@
 
 .ct-series-b .ct-line,
 .ct-series-b .ct-point {
-  stroke: grey;
+  stroke: rgb(70, 0, 128);
 }
 
 .ct-series-c .ct-line,
 .ct-series-c .ct-point {
-  stroke: blue;
+  stroke: rgb(247, 0, 255);
 }
 
 .ct-series-d .ct-line,
 .ct-series-d .ct-point {
-  stroke: rgb(0, 162, 255);
+  stroke: yellow;
+}
+
+.ct-series-e .ct-line,
+.ct-series-e .ct-point {
+  stroke: green;
+}
+
+.ct-series-f .ct-line,
+.ct-series-f .ct-point {
+  stroke: rgb(0, 204, 255);
 }

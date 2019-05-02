@@ -13,11 +13,11 @@ function getHistoricalPricesByItem(item) {
 	return data;
 };
 
-
-function getCurrentPriceByItem(item) {
+// https://www.albion-online-data.com/api/v2/stats/prices/T1_WOOD
+function getCurrentPriceByItem(item, cities) {
 	var data;
 	$.ajax({
-		url: "https://www.albion-online-data.com/api/v2/stats/view/" + item,
+		url: "https://www.albion-online-data.com/api/v2/stats/prices/"+item+"?locations="+cities[0]+","+cities[1]+","+cities[2]+","+cities[3]+","+cities[4]+","+cities[5],
 		data: data,
 		async: false,
 		success: function (json) {
