@@ -9,9 +9,10 @@ var cities = ["Caerleon", "Martlock", "Bridgewatch", "Lymhurst", "Fort Sterling"
 //Items to search
 var array_resources = ["T1_WOOD", "T2_WOOD", "T3_WOOD", "T4_WOOD", "T5_WOOD",
     "T1_ROCK", "T2_ROCK", "T3_ROCK", "T4_ROCK", "T5_ROCK",
+    "T1_ORE", "T2_ORE", "T3_ORE", "T4_ORE", "T5_ORE",
     "T1_HIDE", "T2_HIDE", "T3_HIDE", "T4_HIDE", "T5_HIDE",
-    "T2_CLOTH", "T3_CLOTH", "T4_CLOTH", "T5_CLOTH",
-    "T2_FIBER", "T3_FIBER", "T4_FIBER", "T5_FIBER"
+    "T1_CLOTH", "T2_CLOTH", "T3_CLOTH", "T4_CLOTH", "T5_CLOTH",
+    "T1_FIBER", "T2_FIBER", "T3_FIBER", "T4_FIBER", "T5_FIBER"
 ];
 
 var array_mount = ['T6_MOUNTUPGRADE_GIANTSTAG_XMAS', 'UNIQUE_MOUNTUPGRADE_RAM_XMAS', 'T5_MOUNTUPGRADE_HORSE_CURSE', 'T8_MOUNTUPGRADE_HORSE_CURSE', 'T8_MOUNTUPGRADE_COUGAR_KEEPER', 'T5_MOUNTUPGRADE_HORSE_MORGANA', 'T8_MOUNTUPGRADE_HORSE_MORGANA', 'T8_MOUNTUPGRADE_COMMAND_MAMMOTH', 'T3_FISH_FRESHWATER_MOUNTAIN_RARE', 'T5_FISH_FRESHWATER_MOUNTAIN_RARE', 'T7_FISH_FRESHWATER_MOUNTAIN_RARE', 'QUESTITEM_CARAVAN_TRADEPACK_MOUNTAIN_LIGHT', 'QUESTITEM_CARAVAN_TRADEPACK_MOUNTAIN_MEDIUM', 'QUESTITEM_CARAVAN_TRADEPACK_MOUNTAIN_HEAVY', 'T2_MOUNT_MULE', 'T3_MOUNT_HORSE', 'T4_MOUNT_HORSE', 'T5_MOUNT_HORSE', 'T6_MOUNT_HORSE', 'T7_MOUNT_HORSE', 'T8_MOUNT_HORSE', 'T5_MOUNT_ARMORED_HORSE', 'T6_MOUNT_ARMORED_HORSE', 'T7_MOUNT_ARMORED_HORSE', 'T8_MOUNT_ARMORED_HORSE', 'T3_MOUNT_OX', 'T4_MOUNT_OX', 'T5_MOUNT_OX', 'T6_MOUNT_OX', 'T7_MOUNT_OX', 'T8_MOUNT_OX', 'T4_MOUNT_GIANTSTAG', 'T6_MOUNT_GIANTSTAG', 'T6_MOUNT_DIREWOLF', 'T6_MOUNT_DIREWOLF_WHITE', 'T7_MOUNT_DIREBOAR', 'T7_MOUNT_SWAMPDRAGON', 'T8_MOUNT_DIREBEAR', 'T8_MOUNT_MAMMOTH_TRANSPORT', 'T5_MOUNT_MOABIRD_FW_BRIDGEWATCH', 'T5_MOUNT_DIREBEAR_FW_FORTSTERLING', 'T5_MOUNT_DIREBOAR_FW_LYMHURST', 'T5_MOUNT_RAM_FW_MARTLOCK', 'T5_MOUNT_SWAMPDRAGON_FW_THETFORD', 'T8_MOUNT_MAMMOTH_BATTLE@1', 'T7_MOUNT_SWAMPDRAGON_BATTLE', 'T7_MOUNT_ARMORED_SWAMPDRAGON_BATTLE', 'T6_MOUNT_SIEGE_BALLISTA', 'T5_MOUNT_HORSE_UNDEAD@1', 'T8_MOUNT_HORSE_UNDEAD@1', 'T5_MOUNT_COUGAR_KEEPER@1', 'T8_MOUNT_COUGAR_KEEPER@1', 'T5_MOUNT_ARMORED_HORSE_MORGANA@1', 'T8_MOUNT_ARMORED_HORSE_MORGANA@1', 'T5_MOUNT_HORSE_ARENA@1', 'T5_MOUNT_COUGAR_ARENA@1', 'T5_MOUNT_HORSE_UNDEAD_HALLOWEEN@1', 'T5_MOUNT_COUGAR_TOURNAMENT@1', 'UNIQUE_MOUNT_DONKEY_HALLOWEEN', 'UNIQUE_MOUNT_RAM_XMAS', 'T6_MOUNT_GIANTSTAG_XMAS@1', 'UNIQUE_MOUNT_TELLAFRIEND', 'UNIQUE_MOUNT_DONKEY_UNIQUE_TELLAFRIEND', 'UNIQUE_MOUNT_RAM_TELLAFRIEND', 'UNIQUE_MOUNT_PIG_TELLAFRIEND', 'UNIQUE_MOUNT_PONY_TELLAFRIEND', 'UNIQUE_MOUNT_YAK_TELLAFRIEND', 'UNIQUE_MOUNT_IMPALA_TELLAFRIEND', 'UNIQUE_MOUNT_MOABIRD_TELLAFRIEND', 'UNIQUE_MOUNT_BAT_TELLAFRIEND', 'UNIQUE_MOUNT_GIANTTOAD_TELLAFRIEND', 'UNIQUE_MOUNT_BLOODHOUND_TELLAFRIEND', 'UNIQUE_MOUNT_TIGER_TELLAFRIEND', 'UNIQUE_MOUNT_TRANSPORT_RAM_TELLAFRIEND', 'UNIQUE_MOUNT_PANDA_TELLAFRIEND', 'UNIQUE_MOUNT_BERNARD_TELLAFRIEND', 'UNIQUE_MOUNT_GIANTSTAG_TELLAFRIEND', 'UNIQUE_MOUNT_DIREFOX_TELLAFRIEND', 'UNIQUE_MOUNT_HUSKYSLEIGH_TELLAFRIEND', 'UNIQUE_MOUNT_DIREWOLF_GREY_TELLAFRIEND', 'UNIQUE_MOUNT_TIGER_WHITE_TELLAFRIEND', 'UNIQUE_MOUNT_HOUSEPIG', 'T5_MOUNT_ARMORED_HORSE_SKIN_01', 'T6_MOUNT_ARMORED_HORSE_SKIN_01', 'T7_MOUNT_ARMORED_HORSE_SKIN_01', 'T8_MOUNT_ARMORED_HORSE_SKIN_01', 'T6_MOUNT_DIREWOLF_SPECTER', 'UNIQUE_MOUNT_BAT_PERSONAL', 'T7_MOUNT_MONITORLIZARD_ADC', 'T7_MOUNT_HUSKY_ADC', 'T6_MOUNT_FROSTRAM_ADC', 'T7_MOUNT_TERRORBIRD_ADC', 'UNIQUE_MOUNT_BEAR_KEEPER_ADC', 'UNIQUE_MOUNT_BLACK_PANTHER_ADC', 'T6_MOUNT_CHAMELEON_ADC', 'UNIQUE_MOUNT_RHINO_SEASON_CRYSTAL', 'UNIQUE_MOUNT_RHINO_SEASON_GOLD', 'UNIQUE_MOUNT_RHINO_SEASON_SILVER', 'UNIQUE_MOUNT_RHINO_SEASON_BRONZE', 'UNIQUE_MOUNT_TOWER_CHARIOT_CRYSTAL', 'UNIQUE_MOUNT_TOWER_CHARIOT_GOLD', 'UNIQUE_MOUNT_TOWER_CHARIOT_SILVER', 'UNIQUE_MOUNT_RHINO_TELLAFRIEND', 'UNIQUE_MOUNT_HORSE_FOUNDER_LEGENDARY', 'UNIQUE_MOUNT_OX_FOUNDER_LEGENDARY', 'UNIQUE_MOUNT_HORSE_STARTERPACK', 'UNIQUE_MOUNT_CART_STARTERPACK', 'UNIQUE_MOUNT_GIANTSTAG_FOUNDER_EPIC', 'UNIQUE_FURNITUREITEM_ADC_STATUE_MOUNTED_DIREWOLF_A', 'UNIQUE_FURNITUREITEM_ADC_STATUE_MOUNTED_DIREWOLF_B', 'T1_FACTION_MOUNTAIN_TOKEN_1'];
@@ -63,12 +64,6 @@ function searchBestOption() {
         //generate row in table
         generateRowInTable(data);
     }
-    /*
-        for (x = 0; x < array_mount.length; x++) {
-            var data = getCurrentPriceByItem(array_mount[x], cities);
-            generateRowInTable(data);
-        }
-        */
 }
 
 function writeLabels() {
@@ -133,7 +128,7 @@ function generateRowInTable(data) {
 
                 strRow = "<tr " + styleRow + ">";
                 strRow += "<td>" + data[x].item_id + "</td>"
-                strRow += "<td>" + data[x].item_id + "</td>"
+                strRow += "<td>" + data[x].city + "</td>"
                 strRow += "<td>" + min_profit + "</td>"
                 strRow += "<td>" + minPercentRound + "</td>"
                 strRow += "<td>" + profit + "</td>"
@@ -146,85 +141,9 @@ function generateRowInTable(data) {
                 strRow += "<td>" + diffCurrTimeRound + "</td>"
                 strRow += "</tr>";
                 $('#tbody_rows').append(strRow);
-                /*
-                                min_profit = (caerleon_sellMin===0||city_buyMax===0)?0:city_buyMax-caerleon_sellMin;
-                                minPercent = min_profit===0?0:min_profit/caerleon_sellMin;
-                                minPercentRound = Math.round(minPercent * 100) / 100;
-                
-                                profit = caerleon_sellMin - city_sellMin;
-                                percent = profit / caerleon_sellMin;
-                                percentRound = Math.round(percent * 100) / 100;
-                
-                                styleRow = (min_profit>0)?"style='background:springgreen;'":"";
-                                styleRow = (min_profit>0&&diffCurrTime>10)?"style='background:yellow;'":styleRow;
-                
-                                strRow = "<tr "+styleRow+">";
-                                strRow += "<td>" + data[x].item_id + "</td>"
-                                strRow += "<td>" + data[x].city + "</td>"
-                                strRow += "<td>" + min_profit + "</td>"
-                                strRow += "<td>" + minPercentRound + "</td>"
-                                strRow += "<td>" + profit + "</td>"
-                                strRow += "<td>" + percentRound + "</td>"
-                                strRow += "<td>" + caerleon_buyMax + "</td>"
-                                strRow += "<td>" + city_buyMax + "</td>"
-                                strRow += "<td>" + caerleon_sellMin + "</td>"
-                                strRow += "<td>" + city_sellMin + "</td>"
-                                strRow += "<td>" + diffTimeRound + "</td>"
-                                strRow += "<td>" + diffCurrTimeRound +"</td>"
-                                strRow += "</tr>";
-                                $('#tbody_rows').append(strRow);*/
             }
         }
 
-        //        time1 = new Date(data[0].sell_price_min_date.replace("T", " "));
-        //      time2 = new Date(data[1].sell_price_min_date.replace("T", " "));
-        //    diffTime = Math.abs(time1-time2)/1000/60/60;
-        //  diffTimeRound = Math.round(diffTime * 100) / 100;
-
-        //diffCurrTime = Math.abs((new Date(dateTime)-7200000)-time1)/1000/60/60;
-        //diffCurrTimeRound = Math.round(diffCurrTime * 100) / 100;
-        /*
-                if (data[0].city === city1) {
-                    
-                    buy_max_1 = data[0].buy_price_max;
-                    buy_max_2 = data[1].buy_price_max;
-                    sell_min_1 = data[0].sell_price_min;
-                    sell_min_2 = data[1].sell_price_min;
-                    
-                } else {
-                    buy_max_1 = data[1].buy_price_max;
-                    buy_max_2 = data[0].buy_price_max;
-                    sell_min_1 = data[1].sell_price_min;
-                    sell_min_2 = data[0].sell_price_min;
-                }
-                
-                min_profit = (sell_min_1===0||buy_max_2===0)?0:buy_max_2-sell_min_1;
-                minPercent = min_profit===0?0:min_profit/sell_min_1;
-                minPercentRound = Math.round(minPercent * 100) / 100;
-                
-        
-                profit = sell_min_2 - sell_min_1;
-                percent = profit / sell_min_1;
-                percentRound = Math.round(percent * 100) / 100;
-        
-                styleRow = (min_profit>0)?"style='background:springgreen;'":"";
-                styleRow = (min_profit>0&&diffCurrTime>10)?"style='background:yellow;'":styleRow;
-        
-                strRow = "<tr "+styleRow+">";
-                strRow += "<td>" + data[0].item_id + "</td>"
-                strRow += "<td>" + min_profit + "</td>"
-                strRow += "<td>" + minPercentRound + "</td>"
-                strRow += "<td>" + profit + "</td>"
-                strRow += "<td>" + percentRound + "</td>"
-                strRow += "<td>" + buy_max_1 + "</td>"
-                strRow += "<td>" + buy_max_2 + "</td>"
-                strRow += "<td>" + sell_min_1 + "</td>"
-                strRow += "<td>" + sell_min_2 + "</td>"
-                strRow += "<td>" + diffTimeRound + "</td>"
-                strRow += "<td>" + diffCurrTimeRound +"</td>"
-                strRow += "</tr>";
-                $('#tbody_rows').append(strRow);
-                */
     }
 }
 

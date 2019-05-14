@@ -9,6 +9,7 @@ var Current_InfoCities = Current_InfoCities || [];
 Current_InfoCities.cities = [];
 
 var cities = ["Caerleon", "Martlock", "Bridgewatch", "Lymhurst", "Fort Sterling", "Thetford"];
+var colors = ["black", "rgb(70, 0, 128)", "rgb(247, 0, 255)", "yellow", "green", "rgb(0, 204, 255)"]
 
 /* Add a basic data series with six labels and values */
 var dataChart = {
@@ -58,7 +59,7 @@ function writeHorizontalFormat() {
     var text = Math.floor($(this).text());
     var strDate = new Date(text).getDate();
     var d = new Date(text);
-    var strDate = d.getDate() + "|" + (d.getMonth() + 1) + "|" + d.getFullYear() + " " +
+    var strDate = d.getDate() + "/" + (d.getMonth() + 1) + "/" + d.getFullYear() + " " +
       d.getHours() + ":" + d.getMinutes();
     $(this).text(strDate);
   });
@@ -91,7 +92,6 @@ function getChartInfo(item) {
   Current_InfoCities.cities = [];
   var JSONitemPrices = getHistoricalPricesByItem(item);
 
-  debugger;
   JSONitemPrices.forEach(function (valor, indice, array) {
     //recorre
     if (cities.includes(valor.location)) {
@@ -99,10 +99,12 @@ function getChartInfo(item) {
       infoCity.city = valor.location;
       Current_InfoCities.cities.push(valor.location);
       if (valor.data.timestamps.length > 10) {
-        infoCity.pricesX = valor.data.timestamps.slice(1,10);
-        infoCity.pricesY = valor.data.prices_min.slice(1,10);
-        //infoCity.pricesX = valor.data.timestamps.slice(valor.data.timestamps.length - 10, valor.data.timestamps.length - 1);
-        //infoCity.pricesY = valor.data.prices_min.slice(valor.data.timestamps.length - 10, valor.data.timestamps.length - 1);
+        //infoCity.pricesX = valor.data.timestamps.slice(0,9);
+        //infoCity.pricesY = valor.data.prices_min.slice(0,9);
+        infoCity.pricesX = valor.data.timestamps.slice(valor.data.timestamps.length - 20, valor.data.timestamps.length - 1);
+        infoCity.pricesY = valor.data.prices_min.slice(valor.data.timestamps.length - 20, valor.data.timestamps.length - 1);
+        //infoCity.pricesX = valor.data.timestamps;
+        //infoCity.pricesY = valor.data.prices_min;
       } else {
         infoCity.pricesX = valor.data.timestamps;
         infoCity.pricesY = valor.data.prices_min;
@@ -132,16 +134,19 @@ function rowsOnTable() {
   $('#tbody-rows').html("");
   var str = "";
   var posCityCaerleon = Current_InfoCities.cities.indexOf("Caerleon");
-  //var maxLengthCaerleon = Current_InfoCities[posCityCaerleon].pricesX.length;
+   var maxLengthCaerleon = Current_InfoCities[posCityCaerleon].pricesX.length;
   for (x = 0; x < cities.length; x++) {
-    str += "<tr>";
+    
+    var styleRow = "style='background:"+colors[x]+";";
+    styleRow+="yellow"==colors[x]?"color:black;'":"color:white;'"; 
+    str += "<tr "+styleRow+">";
     str += "<td>" + cities[x] + "</td>";
     var posCity = Current_InfoCities.cities.indexOf(cities[x]);
-    str += "<td>" + Current_InfoCities[posCity].pricesY[0] + "</td>";
-    str += "<td>" + (Current_InfoCities[posCityCaerleon].pricesY[0] - Current_InfoCities[posCity].pricesY[0]) + "</td>";
-    //var maxLength = Current_InfoCities[posCity].pricesX.length;
-    //str += "<td>" + Current_InfoCities[posCity].pricesY[maxLength - 1] + "</td>";
-    //str += "<td>" + (Current_InfoCities[posCityCaerleon].pricesY[maxLengthCaerleon - 1] - Current_InfoCities[posCity].pricesY[maxLength - 1]) + "</td>";
+    //str += "<td>" + Current_InfoCities[posCity].pricesY[0] + "</td>";
+    //str += "<td>" + (Current_InfoCities[posCityCaerleon].pricesY[0] - Current_InfoCities[posCity].pricesY[0]) + "</td>";
+    var maxLength = Current_InfoCities[posCity].pricesX.length;
+    str += "<td>" + Current_InfoCities[posCity].pricesY[maxLength - 1] + "</td>";
+    str += "<td>" + (Current_InfoCities[posCityCaerleon].pricesY[maxLengthCaerleon - 1] - Current_InfoCities[posCity].pricesY[maxLength - 1]) + "</td>";
     str += "</tr>";
   }
   $('#tbody-rows').append(str);
@@ -150,7 +155,8 @@ function rowsOnTable() {
 
 function addSerieToData(arrayX, arrayY) {
   current_serie = [];
-  for (i = arrayX.length - 1; i > 1; i--) {
+  for (var i = 0; i < arrayX.length; i++) {
+  //for (var i = arrayX.length - 1; i > 1; i--) {
     slot = {
       x: arrayX[i],
       y: arrayY[i]
@@ -163,12 +169,12 @@ function addSerieToData(arrayX, arrayY) {
 }
 
 function drawChart() {
-  debugger;
   myChart.update({
     series: [Current_SeriesXy[0], Current_SeriesXy[1], Current_SeriesXy[2], Current_SeriesXy[3], Current_SeriesXy[4], Current_SeriesXy[5]]
   }, {
       axisX: {
         type: Chartist.AutoScaleAxis,
+        scaleMinSpace: 100,
         onlyInteger: true
       }
     });
